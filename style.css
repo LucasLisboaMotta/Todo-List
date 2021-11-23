@@ -9,3 +9,11 @@
 #botoesApagar {
   margin-top: 15px;
 }
+
+#cimaEBaixo button {
+    display: block;
+}
+
+#cimaEBaixo {
+    display: inline-block;
+}

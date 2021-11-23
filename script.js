@@ -84,6 +84,7 @@ function salvar() {
     objeto.classe.push(arrayClasse.join(' '));
   } localStorage.setItem('listaSalva', JSON.stringify(objeto));
 }
+
 botaoSalvar.addEventListener('click', salvar);
 
 function carregarSalvos() {
@@ -100,3 +101,40 @@ function carregarSalvos() {
 }
 
 carregarSalvos();
+
+const botaoCima = document.getElementById('mover-cima');
+const botaoBaixo = document.getElementById('mover-baixo');
+
+function moverCima() {
+  for (let i = 1; i < listaOl.children.length; i += 1) {
+    if (listaOl.children[i].classList.contains('liSelecionado')) {
+      const selecionado = document.getElementsByClassName('liSelecionado')[0];
+      const elementoLi = document.createElement('li');
+      elementoLi.innerText = selecionado.innerText;
+      elementoLi.className = selecionado.className;
+      const liAnterior = listaOl.children[i - 1];
+      listaOl.insertBefore(elementoLi, liAnterior);
+      listaOl.removeChild(selecionado);
+      break;
+    }
+  }
+}
+
+
+function moverBaixo() {
+  for (let i = 0; i < listaOl.children.length - 1; i += 1) {
+    if (listaOl.children[i].classList.contains('liSelecionado')) {
+      const selecionado = document.getElementsByClassName('liSelecionado')[0];
+      const elementoLi = document.createElement('li');
+      elementoLi.innerText = selecionado.innerText;
+      elementoLi.className = selecionado.className;
+      const liPosterior = listaOl.children[i + 2];
+      listaOl.insertBefore(elementoLi, liPosterior);
+      listaOl.removeChild(selecionado);
+      break;
+    }
+  }
+}
+
+botaoCima.addEventListener('click', moverCima);
+botaoBaixo.addEventListener('click', moverBaixo);
