@@ -60,3 +60,12 @@ function removerRiscado() {
 }
 
 botaoRemover.addEventListener('click', removerRiscado);
+
+const botaoSelecionado = document.getElementById('remover-selecionado');
+
+function removerSelecionado() {
+  const selecionado = document.getElementsByClassName('liSelecionado')[0];
+  listaOl.removeChild(selecionado);
+}
+
+botaoSelecionado.addEventListener('click', removerSelecionado);
