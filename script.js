@@ -45,3 +45,18 @@ function removerTudo() {
 }
 
 botaoApagar.addEventListener('click', removerTudo);
+
+const botaoRemover = document.getElementById('remover-finalizados');
+
+function removerRiscado() {
+  const riscados = [];
+  for (let i = 0; i < listaOl.children.length; i += 1) {
+    if (listaOl.children[i].classList.contains('completed')) {
+      riscados.push(listaOl.children[i]);
+    }
+  } for (let i = 0; i < riscados.length; i += 1) {
+    listaOl.removeChild(riscados[i]);
+  }
+}
+
+botaoRemover.addEventListener('click', removerRiscado);
