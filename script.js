@@ -33,3 +33,15 @@ function cortaLi(alvo) {
 }
 
 listaOl.addEventListener('dblclick', cortaLi);
+
+const botaoApagar = document.getElementById('apaga-tudo');
+
+function removerTudo() {
+  const numeroLi = listaOl.children.length;
+  for (let i = 0; i < numeroLi; i += 1) {
+    const filhoApagado = listaOl.children[0];
+    listaOl.removeChild(filhoApagado);
+  }
+}
+
+botaoApagar.addEventListener('click', removerTudo);
