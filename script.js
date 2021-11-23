@@ -69,3 +69,34 @@ function removerSelecionado() {
 }
 
 botaoSelecionado.addEventListener('click', removerSelecionado);
+
+const botaoSalvar = document.getElementById('salvar-tarefas');
+
+function salvar() {
+  localStorage.clear();
+  const objeto = {
+    texto: [],
+    classe: [],
+  };
+  for (let i = 0; i < listaOl.children.length; i += 1) {
+    objeto.texto.push(listaOl.children[i].innerText);
+    const arrayClasse = [...listaOl.children[i].classList];
+    objeto.classe.push(arrayClasse.join(' '));
+  } localStorage.setItem('listaSalva', JSON.stringify(objeto));
+}
+botaoSalvar.addEventListener('click', salvar);
+
+function carregarSalvos() {
+  if (localStorage.length > 0) {
+    const objeto = JSON.parse(localStorage.getItem('listaSalva'));
+    console.log(objeto.classe.length);
+    for (let i = 0; i < objeto.classe.length; i += 1) {
+      const elementoLi = document.createElement('li');
+      elementoLi.innerText = objeto.texto[i];
+      elementoLi.className = objeto.classe[i];
+      listaOl.appendChild(elementoLi);
+    }
+  }
+}
+
+carregarSalvos();
