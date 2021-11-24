@@ -17,3 +17,20 @@
 #cimaEBaixo {
     display: inline-block;
 }
+
+body {
+  background-image: url('fundo 2.jpg');
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+  background-position-y: top;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 145px;
+}
+
+main {
+  margin-left: 470px;
+}

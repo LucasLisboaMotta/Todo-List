@@ -120,7 +120,6 @@ function moverCima() {
   }
 }
 
-
 function moverBaixo() {
   for (let i = 0; i < listaOl.children.length - 1; i += 1) {
     if (listaOl.children[i].classList.contains('liSelecionado')) {
