@@ -1,9 +1,11 @@
 .liSelecionado {
   background-color: gray;
+  word-break: break-all;
 }
 
 .completed {
   text-decoration: line-through solid black;
+  color: red;
 }
 
 #botoesApagar {
@@ -11,11 +13,12 @@
 }
 
 #cimaEBaixo button {
-    display: block;
+  display: block;
 }
 
 #cimaEBaixo {
-    display: inline-block;
+  display: inline-block;
+  margin: 5px;
 }
 
 body {
@@ -33,4 +36,20 @@ h1 {
 
 main {
   margin-left: 470px;
+}
+
+#mover-cima {
+  margin-bottom: 5px;
+}
+
+#criar-tarefa {
+  margin-left: 5px;
+}
+
+#div2 {
+  display: inline-block;
+}
+
+#listaOrdenada {
+  display: inline-block;
 }
